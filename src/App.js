@@ -1,25 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
+import GetPage from './pages/GetPage.js';
+import GetPid from './utils/GetPid.js';
+
+import useMediaQuery from '@mui/material/useMediaQuery';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const matches = useMediaQuery('(min-width:800px)');
+    if (matches) return (GetPage({"page":GetPid()}));
+    else return (
+        <div>
+            <h1>Sorry!</h1>
+            We don't support moblie UI yet.
+        </div>
+    );
 }
 
 export default App;
