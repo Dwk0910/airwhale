@@ -18,16 +18,18 @@ function loginform() {
         if (id === '' || pwd === '') return;
 
         //TODO: Spring과 연동하여 로그인 Validate 구현.
+        const { CTPD } = process.env;
         $.ajax({
             type: "post",
             url: "https://airwhalespring.onrender.com/login",
             data: {
+                ctpd: CTPD,
                 id: id,
                 pwd: pwd
             },
             error: () => { console.log("Error"); }
-        }).then((r) => {
-            console.log(r);
+        }).then((response) => {
+            console.log(response);
         });
     }
 
