@@ -22,7 +22,7 @@ function loginform() {
             type: "post",
             url: "https://airwhalespring.onrender.com/login",
             data: {
-                ctpd: process.env.CTPD,
+                ctpd: process.env.REACT_APP_CTPD,
                 id: id,
                 pwd: pwd
             },
