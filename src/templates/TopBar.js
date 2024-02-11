@@ -1,5 +1,4 @@
-import GetPid from './../utils/GetPid.js';
-import LocalStorage from './../utils/LocalStorage.js';
+import { GetPid, LocalStorage, Redirect } from '../utils/Util';
 
 import {Box, IconButton, styled, Tab, Toolbar, Button, ButtonGroup} from "@mui/material";
 import {Menu} from "@mui/icons-material";
@@ -51,10 +50,10 @@ function TopBar() {
                 <IconButton size={"large"} style={{marginLeft: "-0.5%", marginTop: "0.5%"}}>
                     <Menu fontSize={"inherit"}/>
                 </IconButton>
-                <img src={"https://cdn.discordapp.com/attachments/882101878249361468/1204671139151085598/image-removebg-preview_3.png?ex=65d5946d&is=65c31f6d&hm=9daa68347a8f341d9e376157c10068c4282fb2686a631be80dec2ee0813090ca&"} alt={"logo"} width={"150px"} height={"3%"} style={{marginLeft: "1%", cursor: "pointer"}} onClick={() => {window.location.replace(".");}}/>
+                <img src={"https://cdn.discordapp.com/attachments/882101878249361468/1204671139151085598/image-removebg-preview_3.png?ex=65d5946d&is=65c31f6d&hm=9daa68347a8f341d9e376157c10068c4282fb2686a631be80dec2ee0813090ca&"} alt={"logo"} width={"150px"} height={"3%"} style={{marginLeft: "1%", cursor: "pointer"}} onClick={() => {Redirect(".", false);}}/>
                 <Box sx={{marginLeft: "2%", marginTop: "1%", width: "40%"}}>
                     <StyledTabs value={(isNaN(Number(GetPid()))) ? false : Number(GetPid())} onChange={(event, newValue) => {
-                        window.location.href = (newValue !== 1) ? ".?pid=" + newValue : ".";
+                        Redirect((newValue !== 1) ? ".?pid=" + newValue : ".", false);
                     }}>
                         <StyledTab label={"홈"} value={1} style={{fontSize: "1.1rem", fontFamily: "SeoulNamsan"}}/>
                         <StyledTab label={"공지"} value={2} style={{fontSize: "1.1rem", fontFamily: "SeoulNamsan"}}/>
@@ -65,11 +64,11 @@ function TopBar() {
                 <Box sx={{marginTop: "1%", ml: "auto", mr: "5%", mb: "0.5%"}}>
                     {
                         (id === null) ? <Button variant={"outlined"} style={{fontFamily: "SeoulNamsan"}} onClick={() => {
-                            window.location.href = ".?pid=login";
+                            Redirect(".?pid=login", false);
                             }}>로그인</Button> :
-                        <ButtonGroup variant={"contained"}>
-                            <Button>로그아웃</Button>
-                            <Button variant={"outlined"}>마이페이지</Button>
+                        <ButtonGroup variant={"outlined"}>
+                            <Button variant={"contained"}>로그아웃</Button>
+                            <Button>마이페이지</Button>
                         </ButtonGroup>
                     }
                 </Box>
