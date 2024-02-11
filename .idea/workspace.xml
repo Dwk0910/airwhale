@@ -8,22 +8,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="756c8ac0-9a69-4b9c-9396-bd81ce6abbaf" name="변경" comment="">
-      <change afterPath="$PROJECT_DIR$/.env" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/forms/Signupform.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utils/Util.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/GetPage.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/forms/Loginform.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/forms/Loginform.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/templates/TopBar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/templates/TopBar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/GetPid.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/LocalStorage.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -108,7 +94,7 @@
       <workItem from="1707227006798" duration="74180000" />
       <workItem from="1707412235968" duration="4647000" />
       <workItem from="1707484188056" duration="18596000" />
-      <workItem from="1707537087114" duration="50792000" />
+      <workItem from="1707537087114" duration="52020000" />
     </task>
     <servers />
   </component>
