@@ -60,7 +60,7 @@ function Loginform() {
                         <TextField style={{alignItems: "left"}} sx={{mt: "5%", ml: "8.6%", width: "80%"}}
                                    label={"에어웨일 아이디"} type={"id"} variant={"outlined"} id={"id"}/>
                         <TextField style={{alignItems: "left"}} sx={{mt: "5%", mb: "5%", ml: "8.6%", width: "80%"}}
-                                   label={"비밀번호"} type={"password"} variant={"outlined"} id={"pwd"}/>
+                                   label={"비밀번호"} autoComplete={"password"} type={"password"} variant={"outlined"} id={"pwd"}/>
                         <Button variant={"contained"} style={{fontFamily: "SeoulNamsan"}}
                                 sx={{width: "80%", fontSize: "1.2rem", ml: "8.6%", mb: "2%"}}
                                 type={"submit"}>로그인</Button>

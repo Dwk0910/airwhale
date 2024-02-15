@@ -59,7 +59,10 @@ function Signupform() {
             if (pwd === "") { setPwdError(true); setPwdText("필수 입력란입니다."); isInvalid_st1 = true; }
             if (checkpwd === "") { setCheckPwdError(true); setCheckPwdText("필수 입력란입니다."); isInvalid_st1 = true }
 
-            if (isInvalid_st1) return;
+            if (isInvalid_st1) {
+                setBtnLoading(false);
+                return;
+            }
 
             let isInvalid_st2 = false;
             const passwordRegex = /^(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{5,20}$/;
@@ -71,7 +74,10 @@ function Signupform() {
             if (!passwordRegex.test(pwd)) { setPwdError(true); setPwdText("비밀번호는 5자 이상 20자 이하여야 하며, 대문자, 숫자, 특수문자를 사용하여야 합니다."); isInvalid_st2 = true; }
             if (pwd !== checkpwd) { setCheckPwdError(true); setCheckPwdText("입력한 비밀번호가 잘못되었습니다."); isInvalid_st2 = true; }
 
-            if (isInvalid_st2) return;
+            if (isInvalid_st2) {
+                setBtnLoading(false);
+                return;
+            }
 
             $.ajax({
                 type: "post",
@@ -104,8 +110,8 @@ function Signupform() {
                     p: "29px",
                     ml: "auto",
                     mr: "auto",
-                    mb: "auto",
-                    mt: "5%",
+                    mb: "50px",
+                    mt: "50px",
                     boxShadow: 10,
                     bgcolor: "rgba(85,86,173,0.26)"
                 }} style={{textAlign: "center"}}>
