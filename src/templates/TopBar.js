@@ -3,6 +3,7 @@ import { GetPid, LocalStorage, Redirect } from '../utils/Util';
 import {Box, IconButton, styled, Tab, Toolbar, Button, ButtonGroup} from "@mui/material";
 import {Menu} from "@mui/icons-material";
 
+import Swal from 'sweetalert2';
 import Tabs from '@mui/material/Tabs';
 
 function TopBar() {
@@ -66,10 +67,24 @@ function TopBar() {
                         (id === null) ? <Button variant={"outlined"} style={{fontFamily: "SeoulNamsan"}} onClick={() => {
                             Redirect(".?pid=login", false);
                             }}>로그인</Button> :
-                        <ButtonGroup variant={"outlined"}>
-                            <Button variant={"contained"}>로그아웃</Button>
-                            <Button>마이페이지</Button>
-                        </ButtonGroup>
+                            <ButtonGroup variant={"outlined"}>
+                                <Button variant={"contained"} style={{fontFamily: "SeoulNamsan"}} onClick={() => {
+                                    Swal.fire({
+                                        toast: true,
+                                        text: "정말 로그아웃 하시겠습니까?",
+                                        confirmButtonText: "<span style=\"font-family: 'SeoulNamsan', sans-serif;\">네</span>",
+                                        cancelButtonText: "<span style=\"font-family: 'SeoulNamsan', sans-serif;\">아니요</span>",
+                                        showCancelButton: true,
+                                        showDenyButton: false,
+                                        icon: "question"
+                                    }).then((response) => {
+                                        if (response.isConfirmed) {
+                                            Redirect(".?pid=logout", false);
+                                        }
+                                    });
+                                }}>로그아웃</Button>
+                                <Button style={{fontFamily: "SeoulNamsan"}}>마이페이지</Button>
+                            </ButtonGroup>
                     }
                 </Box>
             </Toolbar>

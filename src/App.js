@@ -7,6 +7,7 @@ import Rule from './pages/Rule.js';
 
 import LoginForm from './pages/forms/Loginform.js';
 import SignupForm from './pages/forms/Signupform.js';
+import Logout from "./pages/forms/Logout";
 
 function App() {
     let pid = GetPid();
@@ -20,6 +21,7 @@ function App() {
 
         case "login": return LoginForm();
         case "signup": return SignupForm();
+        case "logout": return Logout();
 
         default : return (
             <h1>404</h1>

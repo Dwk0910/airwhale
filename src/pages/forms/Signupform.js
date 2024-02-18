@@ -26,7 +26,7 @@ function Signupform() {
 
     if (LocalStorage().get("id") !== null) {
         alert("잘못된 접근입니다.");
-        window.history.back();
+        Redirect(".", true);
     }
 
     const matches = useMediaQuery('(min-width: 800px)');
@@ -81,7 +81,7 @@ function Signupform() {
 
             $.ajax({
                 type: "post",
-                url: "https://airwhalespring.onrender.com/signup",
+                url: "http://dongwan0910.dothome.co.kr/airwhale/Signup.php",
                 data: {
                     ctpd: process.env.REACT_APP_CTPD,
                     id: id,
@@ -90,13 +90,15 @@ function Signupform() {
                     name: name
                 }
             }).then((response) => {
+                response = JSON.parse(response) ;
                 if (response.status === "idexist") {
                     setIdError(true);
                     setBtnLoading(false);
                     setIdText("해당 아이디는 이미 사용중입니다.");
                 } else if (response.status === "success") {
                     setBtnLoading(false);
-                    console.log("success");
+                    LocalStorage().set("signup", true);
+                    Redirect(".?pid=login", true);
                 }
             });
         };
