@@ -3,7 +3,7 @@ import useMediaQuery from "@mui/material/useMediaQuery";
 
 import { LocalStorage } from '../utils/Util';
 import { Alert, Snackbar, Typography } from "@mui/material";
-import {useState} from "react";
+import { useState } from "react";
 
 function Main() {
     document.title = "에어웨일 - 홈";
