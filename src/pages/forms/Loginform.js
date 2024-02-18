@@ -50,6 +50,7 @@ function Loginform() {
         }).then((response) => {
             response = JSON.parse(response);
             if (response.status) {
+                ls.set("login", true);
                 ls.set("id", id);
                 Redirect(".", true);
             } else {
