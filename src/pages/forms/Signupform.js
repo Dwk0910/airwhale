@@ -81,7 +81,7 @@ function Signupform() {
 
             $.ajax({
                 type: "post",
-                url: "http://dongwan0910.dothome.co.kr/airwhale/Signup.php",
+                url: "/Signup.php",
                 data: {
                     ctpd: process.env.REACT_APP_CTPD,
                     id: id,
