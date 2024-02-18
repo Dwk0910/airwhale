@@ -67,7 +67,9 @@ function TopBar() {
                             Redirect(".?pid=login", false);
                             }}>로그인</Button> :
                         <ButtonGroup variant={"outlined"}>
-                            <Button variant={"contained"}>로그아웃</Button>
+                            <Button variant={"contained"} onClick={() => {
+                                Redirect(".?pid=logout", false);
+                            }}>로그아웃</Button>
                             <Button>마이페이지</Button>
                         </ButtonGroup>
                     }
