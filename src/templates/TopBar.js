@@ -51,7 +51,7 @@ function TopBar() {
                 <IconButton size={"large"} style={{marginLeft: "-0.5%", marginTop: "0.5%"}}>
                     <Menu fontSize={"inherit"}/>
                 </IconButton>
-                <img src={"https://cdn.discordapp.com/attachments/882101878249361468/1204671139151085598/image-removebg-preview_3.png?ex=65d5946d&is=65c31f6d&hm=9daa68347a8f341d9e376157c10068c4282fb2686a631be80dec2ee0813090ca&"} alt={"logo"} width={"150px"} height={"3%"} style={{marginLeft: "1%", cursor: "pointer"}} onClick={() => {Redirect(".", false);}}/>
+                <img src={"https://cdn.discordapp.com/attachments/753612337461854302/1210671220199137473/airwhalelogo.png?ex=65eb6870&is=65d8f370&hm=53b08126416de4f2be97ea2932b6a29bf4fd7230f6bb515b151b3fe79dc49653&"} alt={"logo"} width={"150px"} height={"3%"} style={{marginLeft: "1%", cursor: "pointer"}} onClick={() => {Redirect(".", false);}}/>
                 <Box sx={{marginLeft: "2%", marginTop: "1%", width: "40%"}}>
                     <StyledTabs value={(isNaN(Number(GetPid()))) ? false : Number(GetPid())} onChange={(event, newValue) => {
                         Redirect((newValue !== 1) ? ".?pid=" + newValue : ".", false);
