@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    {
+      "source": "/:path*",
+      "destination": "https://dslbackend.kro.kr/airwhale/:path*"
+    }
+  ]
+}
