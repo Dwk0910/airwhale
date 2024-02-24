@@ -1,4 +1,6 @@
-import { GetPid } from './utils/Util';
+import { GetPid, LocalStorage } from './utils/Util';
+
+import $ from 'jquery';
 
 import Main from './pages/Main.js';
 import Information from './pages/Information.js';
@@ -10,6 +12,23 @@ import SignupForm from './pages/forms/Signupform.js';
 import Logout from "./pages/forms/Logout";
 
 function App() {
+    const ls = LocalStorage();
+    if ((ls.get("id") === null && ls.get("pwd") !== null) || (ls.get("id") !== null && ls.get("pwd") === null)) return Logout();
+    else if (ls.get("id") !== null && ls.get("pwd") !== null) {
+        $.ajax({
+            type: "post",
+            url: "/Login.php",
+            data: {
+                ctpd: process.env.REACT_APP_CTPD,
+                id: ls.get("id"),
+                pwd: ls.get("pwd")
+            }
+        }).then((r) => {
+            r = JSON.parse(r);
+            if (!r.status) return Logout();
+        });
+    }
+
     let pid = GetPid();
     if (pid === null) pid = "1";
 

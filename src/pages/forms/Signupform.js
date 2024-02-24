@@ -103,6 +103,7 @@ function Signupform() {
             });
         };
 
+        document.title = "에어웨일 - 회원가입";
         return (
             <div className={"content"}>
                 <TopBar/>
