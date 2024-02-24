@@ -5,8 +5,8 @@ import { Box, Typography, TextField, Alert, Button } from '@mui/material';
 import { LoadingButton } from '@mui/lab';
 
 import TopBar from './../../templates/TopBar.js';
-import $ from 'jquery';
 import useMediaQuery from "@mui/material/useMediaQuery";
+import $ from 'jquery';
 
 function Loginform() {
     const [loginButtonLoading, setLoginButtonLoading] = useState(false);
@@ -52,6 +52,7 @@ function Loginform() {
             if (response.status) {
                 ls.set("login", true);
                 ls.set("id", id);
+                ls.set("pwd", pwd);
                 Redirect(".", true);
             } else {
                 setLoginButtonLoading(false);
