@@ -127,7 +127,7 @@ function Signupform() {
                         }} style={{cursor: "pointer", color: "#63168d"}} underline={"none"}>지금 로그인하기</Link></Typography>
                     <iframe name="dummyframe" title={"dummyframe"} id="dummyframe" style={{display: "none"}}></iframe>
                     <form target={"dummyframe"} onSubmit={() => submit()} onKeyDown={(e) => {
-                        if (e.key === "Enter") submit();
+                        if (e.key === "Enter" && document.getElementById("checkbx").checked) submit();
                     }}>
                         <TextField sx={{mt: "20px", width: "350px"}} variant={"standard"} label={"이름"} id={"name"}
                                    type={"name"} error={nameError} helperText={nameText} autoComplete={"cc-name"}/>
