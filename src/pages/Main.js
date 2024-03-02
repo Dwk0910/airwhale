@@ -2,7 +2,7 @@ import TopBar from './../templates/TopBar.js'
 import useMediaQuery from "@mui/material/useMediaQuery";
 
 import { LocalStorage } from '../utils/Util';
-import { Alert, Snackbar, Typography } from "@mui/material";
+import { Alert, Snackbar, Typography, Box } from "@mui/material";
 import { useState } from "react";
 
 function Main() {
@@ -37,6 +37,17 @@ function Main() {
                     </Alert>
                 </Snackbar>
                 <TopBar/>
+                <Box
+                    component={"div"}
+                    sx={{
+                        background: "no-repeat url(https://cdn.discordapp.com/attachments/1193382787168878592/1204976468107726900/20240208112550_1.jpg?ex=65f26049&is=65dfeb49&hm=fc443935ee2c6c8b67077c9994b7ba58303e2eae30645013efb4ec485c40376f&)",
+                        backgroundSize: "cover",
+                        backgroundPosition: 'center',
+                        height: "600px",
+                        filter: "blur(5px)"
+                    }}
+                >
+                </Box>
             </div>
         );
     } else {
